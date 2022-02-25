@@ -1,4 +1,5 @@
 <template>
+
     <div class="page-product">
         <div class="columns is-multiline">
             <div class="column is-9">
@@ -50,10 +51,10 @@ export default {
             const category_slug = this.$route.params.category_slug
             const product_slug = this.$route.params.product_slug
             await axios
-                .get(`/api/v1/products/${category_slug}/${product_slug}`)
+                .get(`/shoemaker/products/${category_slug}/${product_slug}`)
                 .then(response => {
                     this.product = response.data
-                    document.title = this.product.name + ' | Djackets'
+                    document.title = this.product.name + ' | ShoeMaker'
                 })
                 .catch(error => {
                     console.log(error)

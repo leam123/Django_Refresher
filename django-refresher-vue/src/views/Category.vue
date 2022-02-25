@@ -44,10 +44,10 @@ export default {
             const categorySlug = this.$route.params.category_slug
             this.$store.commit('setIsLoading', true)
             axios
-                .get(`/api/v1/products/${categorySlug}/`)
+                .get(`/shoemaker/products/${categorySlug}/`)
                 .then(response => {
                     this.category = response.data
-                    document.title = this.category.name + ' | Djackets'
+                    document.title = this.category.name + ' | ShoeMaker'
                 })
                 .catch(error => {
                     console.log(error)

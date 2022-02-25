@@ -50,7 +50,7 @@ export default {
         }
     },
     mounted() {
-        document.title = 'Log In | Djackets'
+        document.title = 'Log In | ShoeMaker'
     },
     methods: {
         async submitForm() {
@@ -61,7 +61,7 @@ export default {
                 password: this.password
             }
             await axios
-                .post("/api/v1/token/login/", formData)
+                .post("/shoemaker/token/login/", formData)
                 .then(response => {
                     const token = response.data.auth_token
                     this.$store.commit('setToken', token)

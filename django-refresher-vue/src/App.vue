@@ -2,7 +2,7 @@
   <div id="wrapper">
     <nav class="navbar is-dark">
       <div class="navbar-brand">
-        <router-link to="/" class="navbar-item"><strong>Djackets</strong></router-link>
+        <router-link to="/shoemaker/home" class="navbar-item"><strong>SHOEMAKER</strong></router-link>
 
         <a class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu" @click="showMobileMenu = !showMobileMenu">
           <span aria-hidden="true"></span>
@@ -33,8 +33,8 @@
         </div>
 
         <div class="navbar-end">
-          <router-link to="/summer" class="navbar-item">Summer</router-link>
-          <router-link to="/winter" class="navbar-item">Winter</router-link>
+          <router-link to="/women" class="navbar-item">Women's Shoes</router-link>
+          <router-link to="/men" class="navbar-item">Men's Shoes</router-link>
 
           <div class="navbar-item">
             <div class="buttons">
@@ -96,8 +96,14 @@ export default {
   computed: {
       cartTotalLength() {
           let totalLength = 0
-          for (let i = 0; i < this.cart.items.length; i++) {
-              totalLength += this.cart.items[i].quantity
+          let cartLength = JSON.parse(localStorage.getItem('cart'))
+
+          if(cartLength.items.length == 0){
+            totalLength = 0
+          }else{
+            for (let i = 0; i < this.cart.items.length; i++) {
+                totalLength += this.cart.items[i].quantity
+            }
           }
           return totalLength
       }

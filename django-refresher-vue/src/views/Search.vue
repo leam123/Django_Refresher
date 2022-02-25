@@ -30,7 +30,7 @@ export default {
         }
     },
     mounted() {
-        document.title = 'Search | Djackets'
+        document.title = 'Search | ShoeMaker'
         let uri = window.location.search.substring(1)
         let params = new URLSearchParams(uri)
         if (params.get('query')) {
@@ -42,7 +42,7 @@ export default {
         async performSearch() {
             this.$store.commit('setIsLoading', true)
             await axios
-                .post('/api/v1/products/search/', {'query': this.query})
+                .post('/shoemaker/products/search/', {'query': this.query})
                 .then(response => {
                     this.products = response.data
                 })

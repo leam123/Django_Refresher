@@ -1,7 +1,7 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import store from '../store'
 
-import Home from '../views/Home.vue'
+import Home from '@/views/Home'
 
 import Product from '../views/Product.vue'
 import Category from '../views/Category.vue'
@@ -15,7 +15,7 @@ import Success from '../views/Success.vue'
 
 const routes = [
   {
-    path: '/',
+    path: '/shoemaker/home',
     name: 'Home',
     component: Home
   },

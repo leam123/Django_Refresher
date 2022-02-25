@@ -3,10 +3,10 @@
     <section class="hero is-medium is-dark mb-6">
         <div class="hero-body has-text-centered">
             <p class="title mb-6">
-                Welcome to Djacket
+                Welcome to ShoeMaker
             </p>
             <p class="subtitle">
-                The best jacket store online
+                Find Your Size. Walk Comfortably.
             </p>
         </div>
     </section>
@@ -39,13 +39,13 @@ export default {
   },
   mounted() {
     this.getLatestProducts()
-    document.title = 'Home | Djackets'
+    document.title = 'Home | ShoeMaker'
   },
   methods: {
     async getLatestProducts() {
       this.$store.commit('setIsLoading', true)
       await axios
-        .get('/api/v1/latest-products/')
+        .get('/shoemaker/latest-products/')
         .then(response => {
           this.latestProducts = response.data
         })

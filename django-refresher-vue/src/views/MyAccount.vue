@@ -37,7 +37,7 @@ export default {
         }
     },
     mounted() {
-        document.title = 'My account | Djackets'
+        document.title = 'My account | ShoeMaker'
         this.getMyOrders()
     },
     methods: {
@@ -52,7 +52,7 @@ export default {
         async getMyOrders() {
             this.$store.commit('setIsLoading', true)
             await axios
-                .get('/api/v1/orders/')
+                .get('/shoemaker/orders/')
                 .then(response => {
                     this.orders = response.data
                 })

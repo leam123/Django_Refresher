@@ -138,10 +138,10 @@ export default {
         }
     },
     mounted() {
-        document.title = 'Checkout | Djackets'
+        document.title = 'Checkout | ShoeMaker'
         this.cart = this.$store.state.cart
         if (this.cartTotalLength > 0) {
-            this.stripe = Stripe('pk_test_51H1HiuKBJV2qfWbD2gQe6aqanfw6Eyul5PO2KeOuSRlUMuaV4TxEtaQyzr9DbLITSZweL7XjK3p74swcGYrE2qEX00Hz7GmhMI')
+            this.stripe = Stripe('pk_test_51KX1CpEGJfFBlQrlCIrlaBrkY6cv1tOpx1mgYKgImKtKafHznklHHYIbjbTumudDxNx4oNmBZ3OBZMpkexshuJbA0005foYiqD')
             const elements = this.stripe.elements();
             this.card = elements.create('card', { hidePostalCode: true })
             this.card.mount('#card-element')
@@ -210,7 +210,7 @@ export default {
                 'stripe_token': token.id
             }
             await axios
-                .post('/api/v1/checkout/', data)
+                .post('/shoemaker/checkout/', data)
                 .then(response => {
                     this.$store.commit('clearCart')
                     this.$router.push('/cart/success')

@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+STRIPE_SECRET_KEY = 'sk_test_51KX1CpEGJfFBlQrlQvhqGxupGUhoPQEeYmLnl1upw7YMEDxOGg4b7HqGobK7AbXt4QAaWvqIhFpENvHm5LGalHJY00pNQlVSvq'
 
 # Application definition
 
@@ -46,7 +47,7 @@ INSTALLED_APPS = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:8080",
+    "http://127.0.0.1:8080",
 ]
 
 MIDDLEWARE = [
